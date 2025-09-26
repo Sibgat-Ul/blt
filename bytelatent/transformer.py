@@ -79,9 +79,10 @@ class LMTransformer(
 ):
     def __init__(
             self, 
-            args: LMTransformerArgs = LMTransformerArgs(), 
+            args: LMTransformerArgs = None, 
             **kwargs
         ):
+        args = args or LMTransformerArgs()
         super().__init__(args)
         self.weight_tying = args.weight_tying
         self.sliding_window = args.sliding_window
