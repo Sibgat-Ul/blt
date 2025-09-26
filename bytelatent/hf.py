@@ -152,7 +152,7 @@ def load_transformers(
         print(blt_model)
         print(tok_and_patcher)
     elif source == "hub":
-        entropy_model = LMTransformer.from_pretrained(entropy_repo)
+        entropy_model = load_entropy_model(entropy_repo)[0]
         blt_model = ByteLatentTransformer.from_pretrained(blt_repo)
         tok_and_patcher = BltTokenizerAndPatcher.from_pretrained(blt_repo)
         tokenizer = tok_and_patcher.tokenizer_args.build()
